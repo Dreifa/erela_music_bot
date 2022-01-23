@@ -34,12 +34,12 @@ client.manager = new Manager({
   /*.on("trackStart", (player, track) => {
     const channel = client.channels.cache.get(player.textChannel);
     channel.send(`Now playing: \`${track.title}\`, requested by \`${track.requester.tag}\`.`);
-  })
+  })*/
   .on("queueEnd", player => {
     const channel = client.channels.cache.get(player.textChannel);
-    channel.send("Queue has ended.");
+    //channel.send("Queue has ended.");
     player.destroy();
-  });*/
+  });
 
 client.once("ready", () => {
   client.manager.init(client.user.id);
