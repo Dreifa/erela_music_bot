@@ -18,7 +18,7 @@ client.manager = new Manager({
   nodes: [{
     host: process.env.LAVA_HOST,
 	password: process.env.LAVA_PASS,
-	port: process.env.LAVA_PORT,
+	port: parseInt(process.env.LAVA_PORT, 10),
     retryDelay: 5000,
   }],
   autoPlay: true,
