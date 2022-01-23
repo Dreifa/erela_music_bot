@@ -1,0 +1,13 @@
+{
+  "name": "discord-music-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^14.2.0",
+    "erela.js": "^2.3.3"
+  }
+}
