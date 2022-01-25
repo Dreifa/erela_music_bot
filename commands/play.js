@@ -64,7 +64,7 @@ module.exports = {
         player.queue.add(res.tracks);
 
         if (!player.playing && !player.paused && player.queue.totalSize === res.tracks.length) player.play();
-        return //message.reply(`enqueuing playlist \`${res.playlist.name}\` with ${res.tracks.length} tracks.`);
+        return message.reply(`Устроила мини концерт \`${res.playlist.name}\` с ${res.tracks.length} песнями.`);
       case 'SEARCH_RESULT':
         let max = 10, collected, filter = (m) => m.author.id === message.author.id && /^(\d+|c)$/i.test(m.content);
         if (res.tracks.length < max) max = res.tracks.length;
