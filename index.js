@@ -31,7 +31,6 @@ client.manager = new Manager({
 	retryAmount: Infinity,
     retryDelay: 500,
   }],
-  autoPl
   autoPlay: true,
   send: (id, payload) => {
     const guild = client.guilds.cache.get(id);
