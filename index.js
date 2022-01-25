@@ -2,6 +2,8 @@ require("dotenv").config();
 const { Client, Collection } = require("discord.js");
 const { readdirSync } = require("fs");
 const { Manager } = require("erela.js");
+const Spotify  = require("erela.js-spotify");
+
 
 const client = new Client();
 client.commands = new Collection();
@@ -15,12 +17,21 @@ for (const file of files) {
 }
 
 client.manager = new Manager({
+	plugins: [
+		// Initiate the plugin and pass the two required options.
+		new Spotify({
+		  clientID: "0a102bc20ac640f2bdf0243e3437799f",
+		  clientSecret: "80e88c1b59514e2eb3e1ef0fe4d584e6",
+		})
+	],
   nodes: [{
     host: process.env.LAVA_HOST,
 	password: process.env.LAVA_PASS,
 	port: parseInt(process.env.LAVA_PORT, 10),
-    retryDelay: 5000,
+	retryAmount: Infinity,
+    retryDelay: 500,
   }],
+  autoPl
   autoPlay: true,
   send: (id, payload) => {
     const guild = client.guilds.cache.get(id);

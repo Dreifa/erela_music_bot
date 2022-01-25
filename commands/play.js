@@ -54,6 +54,8 @@ module.exports = {
 					});
       case 'TRACK_LOADED':
         player.queue.add(res.tracks[0]);
+		if (!res.tracks[0].uri) message.client.channels.cache.get(process.env.MUSIC_ARC_ID).send('Спела ' + search + ' для ' + '**' + message.author.username + '**');
+	    else
 		message.client.channels.cache.get(process.env.MUSIC_ARC_ID).send('Спела ' + res.tracks[0].uri + ' для ' + '**' + message.author.username + '**');
 
         if (!player.playing && !player.paused && !player.queue.size) player.play();
