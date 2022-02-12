@@ -21,7 +21,7 @@ client.manager = new Manager({
 		// Initiate the plugin and pass the two required options.
 		new Spotify({
 		  clientID: process.env.SPOTIFY_CLIENT_ID,
-		  clientSecret: process.env.POTIFY_CLIENT_SECRET,
+		  clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
 		})
 	],
   nodes: [{
